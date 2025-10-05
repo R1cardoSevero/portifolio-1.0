@@ -423,6 +423,27 @@
     `;
         }
 
+        const info = document.querySelector('#information');
+
+        // pega a altura "natural" antes de zerar
+        const altura = info.scrollHeight + 10; // altura que teria com fit-content
+
+        info.style.height = '0px'; // começa de 0
+
+        let current = 0;
+        const step = 5;
+
+        function animar() {
+            current += step;
+            if (current >= altura) current = altura;
+            info.style.height = current + 'px';
+            if (current < altura) requestAnimationFrame(animar);
+        }
+
+        // delay de 1 segundo
+        setTimeout(() => {
+            requestAnimationFrame(animar);
+        }, 1000);
     </script>
 </body>
 

@@ -4,6 +4,10 @@
     src: url(Praktika-Light.otf);
 }
 
+:root{
+    --tamanho-div:0px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -66,10 +70,11 @@ header img {
     border-bottom: 4px solid white;
     border-width: 100%;
     padding-bottom: 20px;
+    height: 0;
     padding: 10px;
     padding-top: 20px;
     overflow: hidden;
-    animation: coming 2s;
+    animation: coming 1s;
     animation-fill-mode: forwards;
 }
 
@@ -145,17 +150,9 @@ header img {
 @keyframes coming {
     0% {
         transform: translate(100vw, 10vw);
-        height: 0%;
-    }
-    50% {
-        transform: translate(45vw, 10vw);
-        height: 0px;
-        
     }
     100% {
         transform: translate(45vw, 10vw);
-        height: 270px;
-        
     }
 }
 
